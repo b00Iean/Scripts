@@ -1,0 +1,1 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/venitru/AM3/main/script.lua'),true))()
