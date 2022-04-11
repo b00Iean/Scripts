@@ -1,0 +1,11 @@
+-- https://www.roblox.com/games/8003084678/oMega-Obby-Parkour-525-Stages 
+-- auto prestige
+
+
+getgenv().ooooooo = true
+
+while wait() do 
+    if getgenv().ooooooo == true then 
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.495, 108.351105, 1012.36133, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+    end
+end
