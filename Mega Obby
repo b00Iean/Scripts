@@ -6,6 +6,6 @@ getgenv().ooooooo = true
 
 while wait() do 
     if getgenv().ooooooo == true then 
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1001.495, 108.351105, 1012.36133, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-494.389282, 150.351089, 381.388184, -1, 0, 0, 0, 1, 0, 0, 0, -1)
     end
 end
