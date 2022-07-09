@@ -229,7 +229,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Infinite Stamina",
 	Callback = function()
-		game:GetService("Players").MalloryPerry69.PlayerGui.Stamina.Frame.GuiMain.Disabled = true
+		game:GetService("Players").LocalPlayer.PlayerGui.Stamina.Frame.GuiMain.Disabled = true
 
 		wait()
 		
