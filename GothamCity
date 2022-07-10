@@ -94,8 +94,6 @@ Tab:AddButton({
   	end    
 })
 
-
-
 Tab:AddButton({
 	Name = "Bank Rob - 8,000$",
 	Callback = function()
@@ -117,8 +115,6 @@ Tab:AddButton({
   	end    
 })
 
-
-
 Tab:AddButton({
 	Name = "Freight Ship Rob - 8,000$",
 	Callback = function()
@@ -139,8 +135,6 @@ Tab:AddButton({
 		plr.Character.HumanoidRootPart.CFrame = position 
   	end    
 })
-
-
 
 Tab:AddButton({
 	Name = "Rob All Loop - 8,000$",
@@ -190,7 +184,6 @@ Tab:AddButton({
 		game:GetService("ReplicatedStorage").PurchaseGun:InvokeServer(unpack(args))  
   	end    
 })
-
 
 local Tab = Window:MakeTab({
 	Name = "Super Weapons"
@@ -307,8 +300,6 @@ Tab:AddButton({
   	end    
 })
 
-
-
 Tab:AddButton({
 	Name = "Kill Roblox",
 	Callback = function()
@@ -341,6 +332,14 @@ Tab:AddButton({
 			VirtualUser:ClickButton2(Vector2.zero)
 		end)
   	end    
+})
+
+Tab:AddToggle({
+	Name = "Hide tips",
+	Default = true,
+	Callback = function(Value)
+		game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = Value
+	end    
 })
 
 OrionLib:Init()
