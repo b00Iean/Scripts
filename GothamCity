@@ -353,6 +353,7 @@ Tab:AddToggle({
 	end    
 })
 
+
 local admins = {
 	602195887,
 	440146029,
@@ -360,28 +361,18 @@ local admins = {
 	21404576,
 	43212186,
 	323232914,
-	291675762,
 	25603469
-  }
-  
-  game:GetService("Players").PlayerAdded:Connect(
-	function(player)
-		if table.find(admins, player.UserId) then
+}
+game:GetService("Players").PlayerAdded:Connect(
+    function(player)
+        if table.find(admins, player.UserId) then
 			OrionLib:MakeNotification({
-				Name = "Warning",
-				Content = "A Moderator has connected! theyre displayname has been printed in console, im gonna fix",
-				Time = 5
-			})
-			task.wait()
-			print("Bruce_Wayne")
-			print("Cobblepot")
-			print("ryight")
-			print("mematron")
-			print("alexima123")
-			print("Ninjadevin6")
-			print("evann")
-		end
-	end
-  )
+                Name = "Warning",
+                Content = "A Moderator has connected! gonna fix to show user of the mod",
+                Time = 5
+            })
+        end
+    end
+)
 
 OrionLib:Init()
