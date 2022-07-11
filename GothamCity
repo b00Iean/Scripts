@@ -59,8 +59,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Load Positions",
 	Callback = function()
-		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid 
+		local plr = game.Players.LocalPlayer 
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2251, 71, -659) -- casino
@@ -83,7 +82,6 @@ Tab:AddButton({
 		})
 		wait(2)
 		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid 
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623) -- iniates the moeny count
@@ -104,7 +102,6 @@ Tab:AddButton({
 		})
 		wait(2)
 		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid 
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462) -- giver
@@ -125,7 +122,6 @@ Tab:AddButton({
 		})
 		wait(2)
 		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid 
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait(2)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360) 
@@ -193,7 +189,6 @@ Tab:AddButton({
 	Name = "Ray Gun",
 	Callback = function()
 		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait(0.1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
@@ -206,7 +201,6 @@ Tab:AddButton({
 	Name = "Catwomen Whip",
 	Callback = function()
 		local plr = game.Players.LocalPlayer
-		local humanoid = plr.Character.Humanoid
 		local position = plr.Character.HumanoidRootPart.CFrame
 		wait(0.1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
@@ -214,6 +208,19 @@ Tab:AddButton({
 		plr.Character.HumanoidRootPart.CFrame = position  
   	end    
 })
+
+Tab:AddButton({
+	Name = "Manbat Vial",
+	Callback = function()
+		local plr = game.Players.LocalPlayer
+		local position = plr.Character.HumanoidRootPart.CFrame
+		wait(0.1)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1345, 79, 948)
+		wait(0.5)
+		plr.Character.HumanoidRootPart.CFrame = position  
+  	end    
+})
+
 
 local Tab = Window:MakeTab({
 	Name = "Miscellaneous"
