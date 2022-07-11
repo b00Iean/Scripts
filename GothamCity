@@ -1,9 +1,10 @@
+repeat 
+	task.wait() 
+until game:IsLoaded()
+
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
-
 local lp = game.Players.LocalPlayer
-
-
 
 local Window = OrionLib:MakeWindow({Name = "Something Gotham Script", HidePremium = true, SaveConfig = false, IntroText  = "Something Gotham Script", IntroIcon = " "})
 
@@ -38,6 +39,34 @@ Tab:AddSlider({
 })
 
 Tab:AddButton({
+	Name = "Infinite Stamina",
+	Callback = function()
+		game:GetService("Players").LocalPlayer.PlayerGui.Stamina.Frame.GuiMain.Disabled = true
+
+		wait()
+		
+		local UIS = game:GetService("UserInputService")
+		
+		
+		UIS.InputBegan:Connect(
+			function(input, gameProccessedEvent)
+				if input.KeyCode == Enum.KeyCode.LeftControl then -- skidded and edited by studio toolbox
+					lp.Character.Humanoid.WalkSpeed = 24
+				end
+			end
+		)
+		
+		UIS.InputEnded:Connect(
+			function(input, gameProccessedEvent)
+				if input.KeyCode == Enum.KeyCode.LeftControl then
+					lp.Character.Humanoid.WalkSpeed = 16
+				end
+			end
+		)    
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Server Hop",
 	Callback = function()
         loadstring(game:HttpGet(('https://raw.githubusercontent.com/MegamiShin/Exploit-Scripts/main/Assets/NotMine/ServerHopper.lua')))()
@@ -59,8 +88,7 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Load Positions",
 	Callback = function()
-		local plr = game.Players.LocalPlayer 
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2251, 71, -659) -- casino
 		wait(1)
@@ -68,7 +96,7 @@ Tab:AddButton({
 		wait(1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-665, 62, 2363) -- ship
 		wait(1)
-		plr.Character.HumanoidRootPart.CFrame = position
+		lp.Character.HumanoidRootPart.CFrame = position
   	end    
 })
 
@@ -81,14 +109,13 @@ Tab:AddButton({
 			Time = 5
 		})
 		wait(2)
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623) -- iniates the moeny count
 		wait(152)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0) -- money givver
 		wait(0.5)
-		plr.Character.HumanoidRootPart.CFrame = position 
+		lp.Character.HumanoidRootPart.CFrame = position 
   	end    
 })
 
@@ -101,14 +128,13 @@ Tab:AddButton({
 			Time = 5
 		})
 		wait(2)
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait()
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462) -- giver
 		wait(80.6)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1)
 		wait(1)
-		plr.Character.HumanoidRootPart.CFrame = position 
+		lp.Character.HumanoidRootPart.CFrame = position 
   	end    
 })
 
@@ -121,14 +147,13 @@ Tab:AddButton({
 			Time = 5
 		})
 		wait(2)
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait(2)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360) 
 		wait(80.6)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
 		wait(0.6)
-		plr.Character.HumanoidRootPart.CFrame = position 
+		lp.Character.HumanoidRootPart.CFrame = position 
   	end    
 })
 
@@ -181,6 +206,17 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "SCAR-H - 2,000$",
+	Callback = function()
+		local args = {
+			[1] = "SCAR-H"
+		}
+		game:GetService("ReplicatedStorage").PurchaseGun:InvokeServer(unpack(args))  
+  	end    
+})
+
+
 local Tab = Window:MakeTab({
 	Name = "Super Weapons"
 })
@@ -188,71 +224,39 @@ local Tab = Window:MakeTab({
 Tab:AddButton({
 	Name = "Ray Gun",
 	Callback = function()
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait(0.1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
 		wait(0.5)
-		plr.Character.HumanoidRootPart.CFrame = position  
+		lp.Character.HumanoidRootPart.CFrame = position  
   	end    
 })
 
 Tab:AddButton({
 	Name = "Catwomen Whip",
 	Callback = function()
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait(0.1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
 		wait(0.5)
-		plr.Character.HumanoidRootPart.CFrame = position  
+		lp.Character.HumanoidRootPart.CFrame = position  
   	end    
 })
 
 Tab:AddButton({
 	Name = "Manbat Vial",
 	Callback = function()
-		local plr = game.Players.LocalPlayer
-		local position = plr.Character.HumanoidRootPart.CFrame
+		local position = lp.Character.HumanoidRootPart.CFrame
 		wait(0.1)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1345, 79, 948)
 		wait(0.5)
-		plr.Character.HumanoidRootPart.CFrame = position  
+		lp.Character.HumanoidRootPart.CFrame = position  
   	end    
 })
 
 
 local Tab = Window:MakeTab({
 	Name = "Miscellaneous"
-})
-
-Tab:AddButton({
-	Name = "Infinite Stamina",
-	Callback = function()
-		game:GetService("Players").LocalPlayer.PlayerGui.Stamina.Frame.GuiMain.Disabled = true
-
-		wait()
-		
-		local UIS = game:GetService("UserInputService")
-		
-		local player = game.Players.LocalPlayer
-		
-		UIS.InputBegan:Connect(
-			function(input, gameProccessedEvent)
-				if input.KeyCode == Enum.KeyCode.LeftControl then -- skidded and edited by studio toolbox
-					player.Character.Humanoid.WalkSpeed = 24
-				end
-			end
-		)
-		
-		UIS.InputEnded:Connect(
-			function(input, gameProccessedEvent)
-				if input.KeyCode == Enum.KeyCode.LeftControl then
-					player.Character.Humanoid.WalkSpeed = 16
-				end
-			end
-		)    
-  	end    
 })
 
 Tab:AddButton({
@@ -348,5 +352,36 @@ Tab:AddToggle({
 		game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = Value
 	end    
 })
+
+local admins = {
+	602195887,
+	440146029,
+	131055817,
+	21404576,
+	43212186,
+	323232914,
+	291675762,
+	25603469
+  }
+  
+  game:GetService("Players").PlayerAdded:Connect(
+	function(player)
+		if table.find(admins, player.UserId) then
+			OrionLib:MakeNotification({
+				Name = "Warning",
+				Content = "A Moderator has connected! theyre displayname has been printed in console, im gonna fix",
+				Time = 5
+			})
+			task.wait()
+			print("Bruce_Wayne")
+			print("Cobblepot")
+			print("ryight")
+			print("mematron")
+			print("alexima123")
+			print("Ninjadevin6")
+			print("evann")
+		end
+	end
+  )
 
 OrionLib:Init()
