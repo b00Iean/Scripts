@@ -1,5 +1,6 @@
-local position = lp.Character.HumanoidRootPart.CFrame
 local lp = game.Players.LocalPlayer
+
+local position = lp.Character.HumanoidRootPart.CFrame
 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3534.735, 27.97, 2298.945)
 tweenService, tweenInfo = game:GetService("TweenService"), TweenInfo.new(10, Enum.EasingStyle.Linear)
@@ -98,4 +99,3 @@ tweenService:Create(game:GetService("Players")["LocalPlayer"].Character.Humanoid
 wait(9)
 
 lp.Character.HumanoidRootPart.CFrame = position 
-
