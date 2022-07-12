@@ -8,7 +8,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local humanroot = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
 local lp = game.Players.LocalPlayer
 
-local Window = OrionLib:MakeWindow({Name = "Something Gotham Script", HidePremium = true, SaveConfig = false, IntroText  = "Something Gotham Script", IntroIcon = " "})
+local Window = OrionLib:MakeWindow({Name = "Something Gotham Script", HidePremium = true, SaveConfig = false, IntroEnabled = false})
 
 local Tab = Window:MakeTab({
 	Name = "Local Player"
@@ -189,7 +189,7 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "Load Map",
+	Name = "Fully Load Map",
 	Callback = function()
 		OrionLib:MakeNotification({
 			Name = "Information",
@@ -198,6 +198,104 @@ Tab:AddButton({
 		})
 		wait(3)
 		loadstring(game:HttpGet(('https://raw.githubusercontent.com/b00Iean/Scripts/main/something.lua')))()
+	end
+})
+
+Tab:AddButton({
+	Name = "Player Spawn",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-20, -21, -186)
+	end
+})
+
+Tab:AddButton({
+	Name = "Jewelry",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1082, 68, 217)
+	end
+})
+
+Tab:AddButton({
+	Name = "Bank",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1531, 68, 485)
+	end
+})
+
+Tab:AddButton({
+	Name = "Casino",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2086, 71, -565)
+	end
+})
+
+Tab:AddButton({
+	Name = "Museum",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-628, 68, -668)
+	end
+})
+
+Tab:AddButton({
+	Name = "Gun Store #1",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2079, 68, -845)
+	end
+})
+
+Tab:AddButton({
+	Name = "Gun Store #2",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-697, 68, -471)
+	end
+})
+
+Tab:AddButton({
+	Name = "GCPD Armoury",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1189, 81, -240)
+	end
+})
+
+Tab:AddButton({
+	Name = "GCPD Swat Armoury",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1233, 81, -242)
+	end
+})
+
+Tab:AddButton({
+	Name = "Arkham Asylum",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(72, 82, 890)
+	end
+})
+
+Tab:AddButton({
+	Name = "Blackgate Penitentiary",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-280, 80, -1277)
+	end
+})
+
+Tab:AddButton({
+	Name = "Wayne Terminus",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2855, 74, -1349)
+	end
+})
+
+Tab:AddButton({
+	Name = "Bat Tower",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-698, 194, 190)
+	end
+})
+
+Tab:AddButton({
+	Name = "Talan Owl Office",
+	Callback = function()
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2131, 218, 195)
 	end
 })
 
