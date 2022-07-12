@@ -4,6 +4,8 @@ until game:IsLoaded()
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 
+
+local humanroot = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
 local lp = game.Players.LocalPlayer
 
 local Window = OrionLib:MakeWindow({Name = "Something Gotham Script", HidePremium = true, SaveConfig = false, IntroText  = "Something Gotham Script", IntroIcon = " "})
@@ -183,6 +185,25 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
+	Name = "Teleports"
+})
+
+Tab:AddButton({
+	Name = "Load Map",
+	Callback = function()
+		OrionLib:MakeNotification({
+			Name = "Information",
+			Content = "takes awhile...",
+			Time = 5
+		})
+		wait(3)
+		loadstring(game:HttpGet(('https://raw.githubusercontent.com/b00Iean/Scripts/main/something.lua')))()
+	end
+})
+
+
+
+local Tab = Window:MakeTab({
 	Name = "Weapons"
 })
 
@@ -263,10 +284,9 @@ Tab:AddButton({
 	Name = "Join Discord",
 	Callback = function()
 		local Settings = {
-			InviteCode = "3QESKCC5Bx" -- the code at the end of the invite here
+			InviteCode = "3QESKCC5Bx"
 		}
 		
-		-- Objects
 		local HttpService = game:GetService("HttpService")
 		local RequestFunction
 		
@@ -282,7 +302,6 @@ Tab:AddButton({
 		
 		local DiscordApiUrl = "http://127.0.0.1:%s/rpc?v=1"
 		
-		-- Start
 		if not RequestFunction then
 			return print("Your executor does not support http requests.")
 		end
