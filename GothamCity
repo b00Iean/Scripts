@@ -1,9 +1,4 @@
-repeat 
-	task.wait() 
-until game:IsLoaded()
-
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
-
 
 local humanroot = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
 local lp = game.Players.LocalPlayer
@@ -41,6 +36,20 @@ Tab:AddSlider({
 })
 
 Tab:AddButton({
+	Name = "Server Hop",
+	Callback = function()
+        loadstring(game:HttpGet(('https://raw.githubusercontent.com/MegamiShin/Exploit-Scripts/main/Assets/NotMine/ServerHopper.lua')))()
+  	end    
+})
+
+Tab:AddButton({
+	Name = "Rejoin Server",
+	Callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
+  	end    
+})
+
+Tab:AddButton({
 	Name = "Infinite Stamina",
 	Callback = function()
 		game:GetService("Players").LocalPlayer.PlayerGui.Stamina.Frame.GuiMain.Disabled = true
@@ -67,21 +76,6 @@ Tab:AddButton({
 		)    
   	end    
 })
-
-Tab:AddButton({
-	Name = "Server Hop",
-	Callback = function()
-        loadstring(game:HttpGet(('https://raw.githubusercontent.com/MegamiShin/Exploit-Scripts/main/Assets/NotMine/ServerHopper.lua')))()
-  	end    
-})
-
-Tab:AddButton({
-	Name = "Rejoin Server",
-	Callback = function()
-        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId, game.Players.LocalPlayer)
-  	end    
-})
-
 
 local Tab = Window:MakeTab({
 	Name = "Auto Rob"
@@ -160,11 +154,11 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
-	Name = "Rob All Loop - 8,000$",
+	Name = "Rob All Loop",
 	Callback = function()
 		OrionLib:MakeNotification({
 			Name = "Information",
-			Content = "You have to rejoin to stop this...",
+			Content = "You have to rejoin to stop this... ",
 			Time = 5
 		})
 		while true do 
@@ -245,7 +239,7 @@ Tab:AddButton({
 
 Tab:AddButton({
 	Name = "Gun Store #2",
-	Callback = function()
+	Callback = function()   
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-697, 68, -471)
 	end
 })
@@ -302,7 +296,7 @@ Tab:AddButton({
 
 
 local Tab = Window:MakeTab({
-	Name = "Weapons"
+	Name = "Quick Buy"
 })
 
 Tab:AddButton({
@@ -470,7 +464,6 @@ Tab:AddToggle({
 	end    
 })
 
-
 local admins = {
 	602195887,
 	440146029,
@@ -480,6 +473,7 @@ local admins = {
 	323232914,
 	25603469
 }
+
 game:GetService("Players").PlayerAdded:Connect(
     function(player)
         if table.find(admins, player.UserId) then
