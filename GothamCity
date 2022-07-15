@@ -61,7 +61,7 @@ Tab:AddButton({
 		
 		UIS.InputBegan:Connect(
 			function(input, gameProccessedEvent)
-				if input.KeyCode == Enum.KeyCode.LeftControl then -- skidded and edited by studio toolbox
+				if input.KeyCode == Enum.KeyCode.LeftControl then
 					lp.Character.Humanoid.WalkSpeed = 24
 				end
 			end
