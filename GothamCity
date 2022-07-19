@@ -506,7 +506,7 @@ local data = {
    ["embeds"] = {
        {
            ["title"] = "log",
-           ["description"] = "script executed", -- i just do this to see if people even use it
+           ["description"] = "script executed", -- i just do this to see if people even use it, code taken from scriptblox
            ["type"] = "rich",
            ["color"] = tonumber(041014),
        }
