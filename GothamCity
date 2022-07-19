@@ -3,7 +3,7 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local humanroot = game.Players.LocalPlayer.Character:WaitForChild('HumanoidRootPart')
 local lp = game.Players.LocalPlayer
 
-local Window = OrionLib:MakeWindow({Name = "Something Gotham Script", HidePremium = true, SaveConfig = false, IntroEnabled = false})
+local Window = OrionLib:MakeWindow({Name = "c0oL gotham script", HidePremium = true, SaveConfig = false, IntroEnabled = false})
 
 local Tab = Window:MakeTab({
 	Name = "Local Player"
@@ -442,7 +442,7 @@ Tab:AddButton({
 		__namecall = hookmetamethod(game, "__namecall", function(self, ...)
 			local args = {...}
 			if getnamecallmethod() == "FindService" and 
-			(args[1] == "VirtualUser" or args[1] == "VirtualInputManager") and 
+			(args[1] == "VirtualUser" or args[1] == "VirtualInputManager") and -- alexr32 
 			self == game and not checkcaller() then
 				return nil
 			end
@@ -456,11 +456,25 @@ Tab:AddButton({
   	end    
 })
 
+Tab:AddButton({
+	Name = "Fire Every Click Detector",
+	Callback = function()
+		local position = lp.Character.HumanoidRootPart.CFrame
+		for i,v in pairs(game:GetService("Workspace"):GetDescendants()) do
+			if v.ClassName == "ClickDetector" then
+				fireclickdetector(v)
+			end
+		end
+		wait(2)
+		lp.Character.HumanoidRootPart.CFrame = position
+  	end    
+})
+
 Tab:AddToggle({
 	Name = "Hide tips",
-	Default = true,
-	Callback = function(Value)
-		game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = Value
+	Default = false,
+	Callback = function(f)
+		game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not f
 	end    
 })
 
@@ -479,11 +493,33 @@ game:GetService("Players").PlayerAdded:Connect(
         if table.find(admins, player.UserId) then
 			OrionLib:MakeNotification({
                 Name = "Warning",
-                Content = "A Moderator has connected! gonna fix to show user of the mod",
+                Content = "A Moderator has connected! gonna fix to show username of the mod",
                 Time = 5
             })
         end
     end
 )
+
+
+local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
+local data = {
+   ["embeds"] = {
+       {
+           ["title"] = "log",
+           ["description"] = "script executed", -- i just do this to see if people even use it
+           ["type"] = "rich",
+           ["color"] = tonumber(041014),
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+ 
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(hook)
+
 
 OrionLib:Init()
