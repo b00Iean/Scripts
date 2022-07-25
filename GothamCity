@@ -1,3 +1,5 @@
+
+
 local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
 
 local lp = game.Players.LocalPlayer
@@ -7,10 +9,8 @@ local win = SolarisLib:New({
   FolderToSave = "test"
 })
 
-SolarisLib:Notification("Information", "Might need to click the teleport button again when teleporting or you might fall through the map")
 
 local tab = win:Tab("Local Player")
-
 local sec = tab:Section("Player")
 
 local slider = sec:Slider("Walk Speed", 16,160,16,8,"Slider", function(t)
@@ -28,22 +28,17 @@ sec:Button("Infinite Stamina", function()
     
     local UIS = game:GetService("UserInputService")
     
-    
-    UIS.InputBegan:Connect(
-        function(input, gameProccessedEvent)
-            if input.KeyCode == Enum.KeyCode.LeftControl then
-                lp.Character.Humanoid.WalkSpeed = 24
-            end
+    UIS.InputBegan:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.LeftControl then 
+            lp.Character.Humanoid.WalkSpeed = 24
         end
-    )
+    end)
     
-    UIS.InputEnded:Connect(
-        function(input, gameProccessedEvent)
-            if input.KeyCode == Enum.KeyCode.LeftControl then
-                lp.Character.Humanoid.WalkSpeed = 16
-            end
+    UIS.InputEnded:Connect(function(input)
+        if input.KeyCode == Enum.KeyCode.LeftControl then 
+            lp.Character.Humanoid.WalkSpeed = 16
         end
-    )    
+    end)
 end)
 
 local sec = tab:Section("Server")
@@ -236,24 +231,51 @@ end)
 local sec4 = tab4:Section('Super Weapons')
 
 sec4:Button("Ray Gun", function()
-    local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
-    wait(0.5)
-    lp.Character.HumanoidRootPart.CFrame = position  
+local position = lp.Character.HumanoidRootPart.CFrame
+local freezer = workspace:FindFirstChild("Freeze Ray")
+    if freezer then
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
+        wait(0.5)
+        lp.Character.HumanoidRootPart.CFrame = position  
+    else
+        SolarisLib:Notification("Information", "Freeze Ray already taken")
+    end
 end)
 
-sec4:Button("Catwomen Whip", function()
+sec4:Button("Catwomen's Whip", function()
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
-    wait(0.5)
-    lp.Character.HumanoidRootPart.CFrame = position  
+    local whip = workspace:FindFirstChild("Catwoman's Whip")
+        if whip then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
+            wait(0.5)
+            lp.Character.HumanoidRootPart.CFrame = position  
+        else
+            SolarisLib:Notification("Information", "Catwoman's Whip already taken")
+        end
 end)
 
 sec4:Button("Manbat Vial", function()
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1345, 79, 948)
-    wait(0.5)
-    lp.Character.HumanoidRootPart.CFrame = position  
+    local whip = workspace:FindFirstChild("Manbat Vial")
+        if whip then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1345, 79, 948)
+            wait(0.5)
+            lp.Character.HumanoidRootPart.CFrame = position  
+        else
+            SolarisLib:Notification("Information", "Manbat's Vial already taken")
+        end
+end)
+
+sec4:Button("Umbrella Gun", function()
+    local position = lp.Character.HumanoidRootPart.CFrame
+    local whip = workspace:FindFirstChild("Umbrella Gun")
+        if whip then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1395, 247, 393)
+            wait(0.5)
+            lp.Character.HumanoidRootPart.CFrame = position  
+        else
+            SolarisLib:Notification("Information", "Umbrella Gun already taken")
+        end
 end)
 
 local tab5 = win:Tab('Miscellaneous')
@@ -338,23 +360,3 @@ end)
 local toggle = sec5:Toggle("Hide Tips", false,"Toggle", function(t)
     game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
 end)
-
-local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
-local data = {
-   ["embeds"] = {
-       {
-           ["title"] = "log",
-           ["description"] = "script executed", -- i just do this to see if people even use it, you can obviously take it out if you want to, code taken from scriptblox
-           ["type"] = "rich",
-           ["color"] = tonumber(041014),
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
- 
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(hook)
