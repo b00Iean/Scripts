@@ -1,5 +1,3 @@
-if game.PlaceId == 1591277193 then
-
 local SolarisLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/sol"))()
 
 local lp = game.Players.LocalPlayer
