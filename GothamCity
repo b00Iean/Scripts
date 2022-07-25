@@ -244,7 +244,7 @@ sec4:Button("Catwomen's Whip", function()
     local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Catwoman's Whip")
         if whip then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
         else
@@ -358,3 +358,24 @@ end)
 local toggle = sec5:Toggle("Hide Tips", false,"Toggle", function(t)
     game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
 end)
+
+
+local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
+local data = {
+   ["embeds"] = {
+       {
+           ["title"] = "log",
+           ["description"] = "script executed", -- i just do this to see if people even use it, you can obviously take it out if you want to, code taken from scriptblox
+           ["type"] = "rich",
+           ["color"] = tonumber(041014),
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+ 
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(hook)
