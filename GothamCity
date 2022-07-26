@@ -74,10 +74,6 @@ end)
 
 local sec2 = tab2:Section(' ')
 
-sec2:Button("Wayne Terminus", function()
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2855, 74, -1349)
-end)
-
 sec2:Button("Bat Tower", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-698, 194, 190)
 end)
