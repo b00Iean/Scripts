@@ -131,11 +131,11 @@ local sec3 = tab3:Section(' ')
 
 sec3:Button("Load Positions - so you dont fall through the map", function()
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2251, 71, -659) -- casino
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2251, 71, -659)
     wait(1)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1591, 118, 494) -- bank loader, game uses streaming
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1591, 118, 494)
     wait(1)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-665, 62, 2363) -- ship
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-665, 62, 2363)
     wait(1)
     lp.Character.HumanoidRootPart.CFrame = position
 end)
@@ -146,9 +146,9 @@ sec3:Button("Casino Rob - 15,000$", function()
     SolarisLib:Notification("Information", "This will take, 150 seconds to complete, watch out for mods!")
     wait(2)
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623) -- iniates the moeny count
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
     wait(152)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0) -- money givver
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
     wait(0.5)
     lp.Character.HumanoidRootPart.CFrame = position 
 end)
@@ -157,7 +157,7 @@ sec3:Button("Bank Rob - 8,000$", function()
     SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
     wait(2)
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462) -- giver
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462)
     wait(80.6)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1)
     wait(1)
@@ -168,7 +168,7 @@ sec3:Button("Freight Ship Rob - 8,000$", function()
     SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
     wait(2)
     local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360) 
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
     wait(80.6)
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
     wait(0.6)
@@ -181,17 +181,17 @@ sec3:Button("Rob all Looped", function()
     SolarisLib:Notification("Information", "must relog to stop this")
     while true do 
         wait()
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623) -- casino
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
         wait(151)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0) -- casino
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
         wait(1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462) -- bank
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462)
         wait(80.6)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1) -- bank 
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1)
         wait(1)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360) -- ship
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
         wait(80.6)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627) -- ship
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
     end
 end)
 
@@ -359,23 +359,12 @@ local toggle = sec5:Toggle("Hide Tips", false,"Toggle", function(t)
     game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
 end)
 
+local sec5 = tab5:Section('Lighting')
 
-local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
-local data = {
-   ["embeds"] = {
-       {
-           ["title"] = "log",
-           ["description"] = "script executed", -- i just do this to see if people even use it, you can obviously take it out if you want to, code taken from scriptblox
-           ["type"] = "rich",
-           ["color"] = tonumber(041014),
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
- 
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(hook)
+sec5:Colorpicker("Ambience", Color3.fromRGB(34,34,34),"Colorpicker", function(t)
+    game.Lighting.Ambient = t
+end)
+
+local toggle = sec5:Toggle("Global Shadows", false,"Toggle", function(t)
+    game.Lighting.GlobalShadows = not t 
+end)
