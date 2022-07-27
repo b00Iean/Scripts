@@ -7,7 +7,6 @@ local win = SolarisLib:New({
   FolderToSave = "test"
 })
 
-
 local tab = win:Tab("Local Player")
 local sec = tab:Section("Player")
 
@@ -138,37 +137,50 @@ end)
 
 local sec3 = tab3:Section('Standard')
 
-sec3:Button("Casino Rob - 15,000$", function()
-    SolarisLib:Notification("Information", "This will take, 150 seconds to complete, watch out for mods!")
-    wait(2)
-    local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
-    wait(152)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-    wait(0.5)
-    lp.Character.HumanoidRootPart.CFrame = position 
+
+sec3:Button("Casino - 15,000$", function()
+    if game:service'Workspace'.CasinoRobbery.Robable.Value == true then
+        local position = lp.Character.HumanoidRootPart.CFrame
+        SolarisLib:Notification("Information", "This will take, 150 seconds to complete, watch out for mods!")
+        wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
+        repeat task.wait() until game:service'Players'.LocalPlayer.CasinoAmount.Value == 15000
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        wait(0.5)
+        lp.Character.HumanoidRootPart.CFrame = position 
+    else
+        SolarisLib:Notification("Information", "Casino is not Ready to be Robbed")
+    end
 end)
 
-sec3:Button("Bank Rob - 8,000$", function()
-    SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
-    wait(2)
-    local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462)
-    wait(80.6)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1)
-    wait(1)
-    lp.Character.HumanoidRootPart.CFrame = position   
+sec3:Button("Bank - 8,000$", function()
+    if game:service'Workspace'.Bank.Robable.Value == true then
+        local position = lp.Character.HumanoidRootPart.CFrame
+        SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
+        wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462)
+        repeat task.wait() until game:service'Players'.LocalPlayer.BankAmount.Value == 8000
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 11)
+        wait(0.5)
+        lp.Character.HumanoidRootPart.CFrame = position 
+    else
+        SolarisLib:Notification("Information", "Bank is not Ready to be Robbed")
+    end
 end)
 
-sec3:Button("Freight Ship Rob - 8,000$", function()
-    SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
-    wait(2)
-    local position = lp.Character.HumanoidRootPart.CFrame
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
-    wait(80.6)
-    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
-    wait(0.6)
-    lp.Character.HumanoidRootPart.CFrame = position 
+sec3:Button("Cargo Ship - 8,000$", function()
+    if game:service'Workspace'.CargoShipRobbery.Robable.Value == true then
+        local position = lp.Character.HumanoidRootPart.CFrame
+        SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
+        wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
+        repeat task.wait() until game:service'Players'.LocalPlayer.BankAmount.Value == 4000
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
+        wait(0.5)
+        lp.Character.HumanoidRootPart.CFrame = position 
+    else
+        SolarisLib:Notification("Information", "Cargo Ship is not Ready to be Robbed")
+    end
 end)
 
 local sec3 = tab3:Section(' ')
@@ -352,7 +364,7 @@ sec5:Button("Anti-AFK", function()
 end)
 
 local toggle = sec5:Toggle("Hide Tips", false,"Toggle", function(t)
-    game:GetService("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
+    game:service("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
 end)
 
 local sec5 = tab5:Section('Lighting')
@@ -363,4 +375,19 @@ end)
 
 local toggle = sec5:Toggle("Remove Global Shadows", false,"Toggle", function(t)
     game.Lighting.GlobalShadows = not t 
+end)
+
+sec5:Button("Casino", function()
+    if game:service'Workspace'.CasinoRobbery.Robable.Value == true then
+        local position = lp.Character.HumanoidRootPart.CFrame
+        SolarisLib:Notification("Information", "This will take, 150 seconds to complete, watch out for mods!")
+        wait(2)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
+        repeat task.wait() until game:service'Players'.LocalPlayer.CasinoAmount.Value == 15000
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+        wait(0.5)
+        lp.Character.HumanoidRootPart.CFrame = position 
+    else
+        SolarisLib:Notification("Information", "Casino is not Ready to be Robbed")
+    end
 end)
