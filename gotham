@@ -195,7 +195,7 @@ sec3:Button("Rob all Looped", function()
         wait(1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1572, 121, 462)
         wait(80.6)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1551.04443, 191.072037, 506.559235, 1, 0, 0, 0, 1, 0, 0, 0, 1) -- 2 lazy to make it better 
         wait(1)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
         wait(80.6)
