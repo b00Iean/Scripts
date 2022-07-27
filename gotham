@@ -376,18 +376,3 @@ end)
 local toggle = sec5:Toggle("Remove Global Shadows", false,"Toggle", function(t)
     game.Lighting.GlobalShadows = not t 
 end)
-
-sec5:Button("Casino", function()
-    if game:service'Workspace'.CasinoRobbery.Robable.Value == true then
-        local position = lp.Character.HumanoidRootPart.CFrame
-        SolarisLib:Notification("Information", "This will take, 150 seconds to complete, watch out for mods!")
-        wait(2)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2237, 71, -623)
-        repeat task.wait() until game:service'Players'.LocalPlayer.CasinoAmount.Value == 15000
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2095.06616, 71.1222534, -553.567627, 0, 0, -1, 0, 1, 0, 1, 0, 0)
-        wait(0.5)
-        lp.Character.HumanoidRootPart.CFrame = position 
-    else
-        SolarisLib:Notification("Information", "Casino is not Ready to be Robbed")
-    end
-end)
