@@ -361,6 +361,6 @@ sec5:Colorpicker("Ambience", Color3.fromRGB(34,34,34),"Colorpicker", function(t)
     game.Lighting.Ambient = t
 end)
 
-local toggle = sec5:Toggle("Global Shadows", false,"Toggle", function(t)
+local toggle = sec5:Toggle("Remove Global Shadows", false,"Toggle", function(t)
     game.Lighting.GlobalShadows = not t 
 end)
