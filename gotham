@@ -71,6 +71,10 @@ sec2:Button("Museum", function()
     game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-628, 68, -670)
 end)
 
+sec2:Button("Cargo Ship", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-757, 62, 2390)
+end)
+
 local sec2 = tab2:Section(' ')
 
 sec2:Button("Bat Tower", function()
