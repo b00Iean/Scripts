@@ -174,7 +174,7 @@ sec3:Button("Cargo Ship - 8,000$", function()
         SolarisLib:Notification("Information", "This will take, 80 seconds to complete, watch out for mods!")
         wait(2)
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-711, 63, 2360)
-        repeat task.wait() until game:service'Players'.LocalPlayer.BankAmount.Value == 4000
+        repeat task.wait() until game:service'Players'.LocalPlayer.BankAmount.Value == 8000
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-770.475159, 61.1375427, 2356.58887, 0.965929627, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, 0.965929627)
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position 
