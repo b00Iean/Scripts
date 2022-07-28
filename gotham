@@ -380,3 +380,5 @@ end)
 local toggle = sec5:Toggle("Remove Global Shadows", false,"Toggle", function(t)
     game.Lighting.GlobalShadows = not t 
 end)
+
+print('hello')
