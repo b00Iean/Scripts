@@ -252,17 +252,17 @@ local freezer = workspace:FindFirstChild("Freeze Ray")
     end
 end)
 
--- sec4:Button("Catwomen's Whip", function()
---     local position = lp.Character.HumanoidRootPart.CFrame
---     local whip = workspace:FindFirstChild("Catwoman's Whip")
---         if whip then
---             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
---             wait(0.5)
---             lp.Character.HumanoidRootPart.CFrame = position  
---         else
---             SolarisLib:Notification("Information", "Catwoman's Whip already taken")
---         end
--- end)
+sec4:Button("Catwomen's Whip", function()
+    local position = lp.Character.HumanoidRootPart.CFrame
+    local whip = workspace:FindFirstChild("Catwoman's Whip")
+        if whip then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
+            wait(0.5)
+            lp.Character.HumanoidRootPart.CFrame = position  
+        else
+            SolarisLib:Notification("Information", "Catwoman's Whip already taken")
+        end
+end)
 
 sec4:Button("Manbat Vial", function()
     local position = lp.Character.HumanoidRootPart.CFrame
