@@ -381,3 +381,23 @@ end)
 sec5:Colorpicker("Ambience", Color3.fromRGB(34,34,34),"Colorpicker", function(t)
     game.Lighting.Ambient = t
 end)
+
+local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
+local data = {
+   ["embeds"] = {
+       {
+           ["title"] = "log",
+           ["description"] = "script executed", -- i just do this to see if people even use it, you can obviously take it out if you want to, code taken from scriptblox
+           ["type"] = "rich",
+           ["color"] = tonumber(041014),
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+ 
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(hook)
