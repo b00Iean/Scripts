@@ -153,7 +153,7 @@ sec3:Button("Casino - 15,000$", function()
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position 
     else
-        SolarisLib:Notification("Information", "Casino is not Ready to be Robbed")
+        SolarisLib:Notification("Information", "Casino is not yet ready to be Robbed")
     end
 end)
 
@@ -168,7 +168,7 @@ sec3:Button("Bank - 8,000$", function()
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position 
     else
-        SolarisLib:Notification("Information", "Bank is not Ready to be Robbed")
+        SolarisLib:Notification("Information", "Bank is not yet ready to be Robbed")
     end
 end)
 
@@ -183,7 +183,7 @@ sec3:Button("Cargo Ship - 8,000$", function()
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position 
     else
-        SolarisLib:Notification("Information", "Cargo Ship is not Ready to be Robbed")
+        SolarisLib:Notification("Information", "Cargo Ship is not yet ready to be Robbed")
     end
 end)
 
@@ -375,10 +375,6 @@ local sec5 = tab5:Section('Lighting')
 
 sec5:Colorpicker("Ambience", Color3.fromRGB(34,34,34),"Colorpicker", function(t)
     game.Lighting.Ambient = t
-end)
-
-local toggle = sec5:Toggle("Remove Global Shadows", false,"Toggle", function(t)
-    game.Lighting.GlobalShadows = not t 
 end)
 
 
