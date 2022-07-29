@@ -139,8 +139,8 @@ sec3:Button("Load Positions - so you dont fall through the map", function()
     lp.Character.HumanoidRootPart.CFrame = position
 end)
 
-local sec3 = tab3:Section('Standard')
 
+local sec3 = tab3:Section('Standard')
 
 sec3:Button("Casino - 15,000$", function()
     if game:service'Workspace'.CasinoRobbery.Robable.Value == true then
@@ -187,6 +187,7 @@ sec3:Button("Cargo Ship - 8,000$", function()
     end
 end)
 
+
 local sec3 = tab3:Section(' ')
 
 sec3:Button("Rob all Looped", function()
@@ -207,11 +208,13 @@ sec3:Button("Rob all Looped", function()
     end
 end)
 
+
 local sec3 = tab3:Section('Hidden')
 
 sec3:Button("Casino Rob", function()
     SolarisLib:Notification("Information", "would hide you in whilst robbing the casino coming soon")
 end)
+
 
 local tab4 = win:Tab('Weapons')
 local sec4 = tab4:Section('Quick Buy')
@@ -241,10 +244,11 @@ end)
 local sec4 = tab4:Section('Super Weapons')
 
 sec4:Button("Ray Gun", function()
+local posray = game:GetService("Workspace")["Freeze Ray"].Handle.Position
 local position = lp.Character.HumanoidRootPart.CFrame
 local freezer = workspace:FindFirstChild("Freeze Ray")
     if freezer then
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-2067, 71, -987)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posray)
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position  
     else
@@ -253,10 +257,11 @@ local freezer = workspace:FindFirstChild("Freeze Ray")
 end)
 
 sec4:Button("Catwomen's Whip", function()
+    local poswhip = game:GetService("Workspace")["Catwoman's Whip"].Handle.Position
     local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Catwoman's Whip")
         if whip then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-368, 92, -178)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(poswhip)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
         else
@@ -265,10 +270,11 @@ sec4:Button("Catwomen's Whip", function()
 end)
 
 sec4:Button("Manbat Vial", function()
+    local posvial = game:GetService("Workspace")["Manbat Vial"].Handle.Position
     local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Manbat Vial")
         if whip then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1345, 79, 948)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posvial)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
         else
@@ -277,10 +283,11 @@ sec4:Button("Manbat Vial", function()
 end)
 
 sec4:Button("Umbrella Gun", function()
+    local posumbrella = game:GetService("Workspace")["Umbrella Gun"].Handle.Position
     local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Umbrella Gun")
         if whip then
-            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1395, 247, 393)
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posumbrella)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
         else
@@ -288,9 +295,9 @@ sec4:Button("Umbrella Gun", function()
         end
 end)
 
+
 local tab5 = win:Tab('Miscellaneous')
 local sec5 = tab5:Section(' ')
-
 
 sec5:Button("Join Discord", function()
     local Settings = {
@@ -371,29 +378,6 @@ local toggle = sec5:Toggle("Hide Tips", false,"Toggle", function(t)
     game:service("Players").LocalPlayer.PlayerGui.Tips.TextLabel.Visible = not t
 end)
 
-local sec5 = tab5:Section('Lighting')
-
 sec5:Colorpicker("Ambience", Color3.fromRGB(34,34,34),"Colorpicker", function(t)
     game.Lighting.Ambient = t
 end)
-
-
-local url = "https://websec.services/send/62d6e1ce42cd3fcfb20338dd"
-local data = {
-   ["embeds"] = {
-       {
-           ["title"] = "log",
-           ["description"] = "script executed", -- i just do this to see if people even use it, you can obviously take it out if you want to, code taken from scriptblox
-           ["type"] = "rich",
-           ["color"] = tonumber(041014),
-       }
-   }
-}
-local newdata = game:GetService("HttpService"):JSONEncode(data)
- 
-local headers = {
-   ["content-type"] = "application/json"
-}
-request = http_request or request or HttpPost or syn.request
-local hook = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(hook)
