@@ -244,10 +244,10 @@ end)
 local sec4 = tab4:Section('Super Weapons')
 
 sec4:Button("Ray Gun", function()
-local posray = game:GetService("Workspace")["Freeze Ray"].Handle.Position
-local position = lp.Character.HumanoidRootPart.CFrame
 local freezer = workspace:FindFirstChild("Freeze Ray")
     if freezer then
+        local position = lp.Character.HumanoidRootPart.CFrame
+        local posray = game:GetService("Workspace")["Freeze Ray"].Handle.Position
         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posray)
         wait(0.5)
         lp.Character.HumanoidRootPart.CFrame = position  
@@ -257,10 +257,10 @@ local freezer = workspace:FindFirstChild("Freeze Ray")
 end)
 
 sec4:Button("Catwomen's Whip", function()
-    local poswhip = game:GetService("Workspace")["Catwoman's Whip"].Handle.Position
-    local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Catwoman's Whip")
         if whip then
+            local position = lp.Character.HumanoidRootPart.CFrame
+            local poswhip = game:GetService("Workspace")["Catwoman's Whip"].Handle.Position
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(poswhip)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
@@ -270,10 +270,10 @@ sec4:Button("Catwomen's Whip", function()
 end)
 
 sec4:Button("Manbat Vial", function()
-    local posvial = game:GetService("Workspace")["Manbat Vial"].Handle.Position
-    local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Manbat Vial")
         if whip then
+            local position = lp.Character.HumanoidRootPart.CFrame
+            local posvial = game:GetService("Workspace")["Manbat Vial"].Handle.Position
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posvial)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
@@ -283,10 +283,10 @@ sec4:Button("Manbat Vial", function()
 end)
 
 sec4:Button("Umbrella Gun", function()
-    local posumbrella = game:GetService("Workspace")["Umbrella Gun"].Handle.Position
-    local position = lp.Character.HumanoidRootPart.CFrame
     local whip = workspace:FindFirstChild("Umbrella Gun")
         if whip then
+            local position = lp.Character.HumanoidRootPart.CFrame
+            local posumbrella = game:GetService("Workspace")["Umbrella Gun"].Handle.Position
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(posumbrella)
             wait(0.5)
             lp.Character.HumanoidRootPart.CFrame = position  
