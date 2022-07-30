@@ -4882,7 +4882,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'jhS2vYpZqH'}
+				args = {code = '3QESKCC5Bx'}
 			})
 		})
         if res.Success then
@@ -4897,6 +4897,11 @@ function library:CreateSettingsTab(menu)
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
+
+    mainSection:AddButton({text = 'Copy Join Script', callback = function()
+        setclipboard('game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..',"'..game.JobId..'")')
+    end})
+
 
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
         library:Unload();
